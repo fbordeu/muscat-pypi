@@ -95,6 +95,18 @@ jobs:
           search-text: 'MuscatTagBranch = "master"' # The text to find
           replacement-text: 'MuscatTagBranch = "${{ env.TAG_NAME }}"' # The text to replace it with
 
+      - name: Checkout Muscat Sources to Get metadata
+        shell: bash
+        run: |
+          # 1. Download the file
+          curl -L -o muscat.tar.gz https://gitlab.com/drti/muscat/-/archive/${{ env.TAG_NAME }}/muscat-${{ env.TAG_NAME }}.tar.gz
+
+          # 2. Create destination directory
+          mkdir -p ./muscat
+
+          # 3. Decompress (works on all 3 OS with 'shell: bash')
+          tar -xzf muscat.tar.gz -C ./muscat
+
       - name: Build wheels
       # build the  wheels for all the python versions (os is handled by the strategy.matrix.os )
         uses: pypa/cibuildwheel@v3.3.1

@@ -13,6 +13,7 @@ build-backend = "scikit_build_core.build"
 [project]
 name = "muscat"
 requires-python = ">=3.10"
+readme = {file = 'muscat/README.md', content-type='text/markdown'}
 
 # DO NOT modify the next line !!!!
 # this string is replaced by the GitHub action to the actual tag or branch name used for the compilation

@@ -22,7 +22,9 @@ endif()
 message(STATUS "MuscatTagBranch is defined to: ${MuscatTagBranch}")
 message(STATUS "MuscatTagBranchVersion is defined to: ${MuscatTagBranchVersion}")
 
-set(Muscat_URL  "https://gitlab.com/drti/muscat/-/archive/${MuscatTagBranchVersion}/muscat-${MuscatTagBranchVersion}.tar.gz")
+#set(Muscat_URL  "https://gitlab.com/drti/muscat/-/archive/${MuscatTagBranchVersion}/muscat-${MuscatTagBranchVersion}.tar.gz")
+set(Muscat_URL  "${CMAKE_SOURCE_DIR}/muscat")
+
 message(STATUS "using Muscat_URL ${Muscat_URL}")
 
 set(boost_URL "https://github.com/boostorg/boost/releases/download/boost-1.89.0/boost-1.89.0-b2-nodocs.tar.gz" )
