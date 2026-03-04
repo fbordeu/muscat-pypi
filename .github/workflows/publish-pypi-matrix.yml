@@ -105,7 +105,7 @@ jobs:
           mkdir -p ./muscat
 
           # 3. Decompress (works on all 3 OS with 'shell: bash')
-          tar -xzf muscat.tar.gz -C ./muscat
+          tar -xzf muscat.tar.gz --strip-components=1 -C ./muscat
 
       - name: Build wheels
       # build the  wheels for all the python versions (os is handled by the strategy.matrix.os )
